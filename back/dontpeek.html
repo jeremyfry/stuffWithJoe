@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Personal Site</title>
+	<link rel="stylesheet" type="text/css" href="/personalsite.css" />
+	<script src="/handlebars-v1.3.0.js"></script>
+	<script src="//code.jquery.com/jquery-2.1.1.js"></script>
+</head>
+<body>
+	<h1>Joseph Turbin</h1>
+	<nav>
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Father</a>
+				<ul>
+					<li><a href="#">Reagan</a></li>
+					<li><a href="#">Jett</a></li>
+				</ul>	
+			</li>		
+			<li><a href="pilot.html">Pilot</a></li>	
+			<li><a href="www.google.com">Developer in Training</a></li>
+			<li><a href="www.google.com">Gamer</a></li>
+		</ul>	
+	</nav>
+	<div id="whitespace">
+	</div>
+
+	<script id="page-template" type="text/x-handlebars-template">
+		<aside>{{title}}</aside>
+		<!--The articles should show to the right of the side bar-->
+		<article>{{content}}</article>
+		<article>This will be article 2</article>
+		<article>This will be article 3</article>
+		<article>This will be article 4</article>
+	</script>
+	<script>
+		var source = $("#page-template").html();
+		var template = Handlebars.compile(source);
+
+		function Page(name){
+			var _this = this;
+			this.name = name;
+
+			this.getPageContent = function(){
+				$.getJSON( "/"+this.name+".json", function( data ) {
+					_this.addPageToDOM(data);
+				});
+			}
+
+			this.addPageToDOM = function(pageContent){
+				$("#whitespace").html(template(pageContent));
+			}
+		}
+
+		var homePage = new Page('page');
+		homePage.getPageContent();
+
+	</script>
+	</body>
+</html>

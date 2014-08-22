@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Personal Site</title>
+	<link rel="stylesheet" type="text/css" href="/personalsite.css" />
+	<script src="/handlebars-v1.3.0.js"></script>
+	<script src="//code.jquery.com/jquery-2.1.1.js"></script>
+</head>
+<body>
+	<h1>Joseph Turbin</h1>
+	<nav>
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Father</a>
+				<ul>
+					<li><a href="#">Reagan</a></li>
+					<li><a href="#">Jett</a></li>
+				</ul>	
+			</li>		
+			<li><a href="pilot.html">Pilot</a></li>	
+			<li><a href="www.google.com">Developer in Training</a></li>
+			<li><a href="www.google.com">Gamer</a></li>
+		</ul>	
+	</nav>
+	<div id="whitespace"></div>
+
+	<script id="entry-template" type="text/x-handlebars-template">
+  		<aside>{{title}}</aside>
+		<!--The articles should show to the right of the side bar-->
+		<article>{{sidebar}}</article>
+		<article>{{sidebar}}</article>
+		<article>{{sidebar}}</article>
+		<article>{{sidebar}}</article>
+	</script>
+
+	<script type="text/javascript">
+		var source   = $("#entry-template").html();
+		var template = Handlebars.compile(source);
+
+	function Page (name) {
+		this.name = name;
+		var self = this;
+
+		this.getPageContent = function (){
+			//content in place of pulling from JSON file
+			this.pageContent = {
+					"title": "My Title",
+					"sidebar": "Sidebar content",
+					"sections": [
+						{
+							"title": "Section 1",
+							"content": "section content"
+						}
+					]
+				};
+			}
+
+		this.addContentToDom = function (){
+			//code for adding conent to the page
+			$("#whitespace").html(template(self.pageContent));
+		}
+	}
+
+	var homePage = new Page("page");
+	homePage.getPageContent();
+	homePage.addContentToDom();
+
+
+	</script>
+
+	<!-- create your page template (look at handlebars docs) -->
+	<!-- create your page class -->
+	<!-- use $.getJSON to pull in page content based on page's name -->
+	<!-- use $("#whitespace").html() to add it to the DOM -->
+	</body>
+</html>

@@ -1,0 +1,10 @@
+{
+	"title": "My Title",
+	"sidebar": "Sidebar content",
+	"sections": [
+		{
+			"title": "Section 1",
+			"content": "section content"
+		}
+	]
+}
