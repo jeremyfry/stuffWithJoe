@@ -3,28 +3,30 @@
 	<head>
 		<title>Pizza Time!</title>
 		<link rel="stylesheet" type="text/css" href="PizzaTime.css">
+		<script src="//code.jquery.com/jquery-2.1.1.js"></script>
 		<script src= "PizzaTime.js" type="text/javascript"></script>
 	</head>
-
 	<body>
 		
 		<div id="selectionBoxes">
 			<select id="cities">
-				<option>New York</option>
-				<option>Chicago</option>
-				<option>San Francisco</option>
+				<option>Please Select Your City</option>
+				<option value="newYorkPizza">New York</option>
+				<option value= "sanFranPizza">San Francisco</option>
+				<option value="chicagoPizza">Chicago</option>
+				
 			</select>
-			<select id="NewYorkPizza">
+			<select class="pizzaSelection" id="newYorkPizza">
 				<option>NY Style Cheese</option>
 				<option>Veggie Deluxe</option>
 				<option>Mega Meat</option>
 			</select>
-			<select id="ChicagoPizza">
+			<select class="pizzaSelection" id="chicagoPizza">
 				<option>Yo Momma Cheese</option>
 				<option>Super Healthy Veggie</option>
 				<option>Awesomely Meaty</option>
 			</select>
-			<select id="SanFranPizza">
+			<select class="pizzaSelection" id="sanFranPizza">
 				<option>Happy Cheese</option>
 				<option>Fruity Veggie</option>
 				<option>Deliciously Meaty</option>
