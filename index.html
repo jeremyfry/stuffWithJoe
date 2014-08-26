@@ -3,7 +3,7 @@
 	<head>
 		<title>Pizza Time!</title>
 		<link rel="stylesheet" type="text/css" href="PizzaTime.css">
-		<script src="//code.jquery.com/jquery-2.1.1.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 		<script src= "PizzaTime.js" type="text/javascript"></script>
 	</head>
 	<body>
@@ -17,24 +17,30 @@
 				
 			</select>
 			<select class="pizzaSelection" id="newYorkPizza">
-				<option>NY Style Cheese</option>
-				<option>Veggie Deluxe</option>
-				<option>Mega Meat</option>
+				<option>Please Select Your Pizza Type</option>
+				<option value="cheese">NY Style Cheese</option>
+				<option value="veggie">Veggie Deluxe</option>
+				<option value="meat">Mega Meat</option>
 			</select>
 			<select class="pizzaSelection" id="chicagoPizza">
-				<option>Yo Momma Cheese</option>
-				<option>Super Healthy Veggie</option>
-				<option>Awesomely Meaty</option>
+				<option>Please Select Your Pizza Type</option>
+				<option value="cheese">Yo Momma Cheese</option>
+				<option value="veggie">Super Healthy Veggie</option>
+				<option value="meat">Awesomely Meaty</option>
 			</select>
 			<select class="pizzaSelection" id="sanFranPizza">
-				<option>Happy Cheese</option>
-				<option>Fruity Veggie</option>
-				<option>Deliciously Meaty</option>
-			</select>
+				<option>Please Select Your Pizza Type</option>
+				<option value="cheese">Happy Cheese</option>
+				<option value="veggie">Fruity Veggie</option>
+				<option value="meat">Deliciously Meaty</option>
+			</select><br>
+			<button>Clear Selection</button>
 		</div>
-		<div id="ingredientList">
-			List ingredients here based on the selections above.
 
+		<div class="ingredientContainer">
+			<p class="ingredients" id="cheese">You've selected a cheese pizza. Excellent choice! <br> Ingredients: Cheese.. Duh!</p>
+			<p class="ingredients" id="veggie">You've selected a veggie pizza. Excellent choice! <br> Ingredients: Green Pepper, Onions, Olives, Mushrooms.</p>
+			<p class="ingredients" id="meat">You've selected a meaty pizza. Excellent choice! <br> Ingredients: Sausage, Pepperoni, Italian Sausage, Canadian Bacon</p>
 		</div>
 
 

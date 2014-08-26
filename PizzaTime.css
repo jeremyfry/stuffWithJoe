@@ -2,6 +2,10 @@ body {
 	background-color: #CF0A42;
 }
 
+.pizzaSelection {
+	display: none;
+}
+
 #selectionBoxes {
 	height: 200px;
 	width: 70%;
@@ -11,11 +15,27 @@ body {
 
 }
 
-#ingredientList {
+.ingredientContainer {
 	height: 100px;
 	width: 50%;
 	border-style: dotted;
 	margin-top: 10px;
 	margin-left: auto;
 	margin-right: auto;
+	display: none;
+}
+
+#cheese {
+	text-align: center;
+	display: none;
+}
+
+#veggie {
+	text-align: center;
+	display: none;
+}
+
+#meat {
+	text-align: center;
+	display: none;
 }
