@@ -16,6 +16,7 @@ $(function(){
 		$(".ingredients").hide();
 		$(".ingredientContainer").hide();
 		$(".pizzaSelection").hide();
+		$("#cities").prop("selectedIndex", 0);
 
 	});
 
